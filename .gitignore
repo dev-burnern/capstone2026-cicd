@@ -7,6 +7,9 @@
 *.log
 npm-debug.log*
 
+# Local verification artifacts
+/output/
+
 # Local environment
 .env
 
