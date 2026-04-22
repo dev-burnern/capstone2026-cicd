@@ -75,14 +75,14 @@ function App() {
   };
 
   return (
-    <main className="app-shell">
-      <section className="forms-grid">
-        <form className="panel" onSubmit={handleLogin}>
-          <h1>회원 로그인</h1>
+    <main>
+      <h1>CI/CD실습 - feature/github-ci, feature/github-cd 브랜치</h1>
+      <hr />
 
-          <label htmlFor="login-user-id">아이디</label>
+      <section>
+        <h2>회원 로그인</h2>
+        <form onSubmit={handleLogin}>
           <input
-            id="login-user-id"
             name="userId"
             type="text"
             placeholder="아이디"
@@ -90,10 +90,8 @@ function App() {
             onChange={handleLoginChange}
             required
           />
-
-          <label htmlFor="login-password">비밀번호</label>
+          <br />
           <input
-            id="login-password"
             name="password"
             type="password"
             placeholder="비밀번호"
@@ -101,20 +99,20 @@ function App() {
             onChange={handleLoginChange}
             required
           />
-
+          <br />
           <button type="submit" disabled={loginLoading}>
             {loginLoading ? '로그인 중...' : '로그인'}
           </button>
-
-          {loginMessage ? <p className="feedback">{loginMessage}</p> : null}
         </form>
+        {loginMessage ? <p>{loginMessage}</p> : null}
+      </section>
 
-        <form className="panel" onSubmit={handleRegister}>
-          <h1>회원가입</h1>
+      <hr />
 
-          <label htmlFor="register-user-id">아이디</label>
+      <section>
+        <h2>회원가입</h2>
+        <form onSubmit={handleRegister}>
           <input
-            id="register-user-id"
             name="userId"
             type="text"
             placeholder="아이디"
@@ -122,10 +120,8 @@ function App() {
             onChange={handleRegisterChange}
             required
           />
-
-          <label htmlFor="register-password">비밀번호</label>
+          <br />
           <input
-            id="register-password"
             name="password"
             type="password"
             placeholder="비밀번호"
@@ -133,10 +129,8 @@ function App() {
             onChange={handleRegisterChange}
             required
           />
-
-          <label htmlFor="register-name">이름</label>
+          <br />
           <input
-            id="register-name"
             name="name"
             type="text"
             placeholder="이름"
@@ -144,14 +138,16 @@ function App() {
             onChange={handleRegisterChange}
             required
           />
-
+          <br />
           <button type="submit" disabled={registerLoading}>
             {registerLoading ? '등록 중...' : '회원가입'}
           </button>
-
-          {registerMessage ? <p className="feedback">{registerMessage}</p> : null}
         </form>
+        {registerMessage ? <p>{registerMessage}</p> : null}
       </section>
+
+      <hr />
+      <a href="/projectInfo.html">프로젝트 정보 확인</a>
     </main>
   );
 }
