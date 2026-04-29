@@ -18,7 +18,7 @@ services:
       start_period: 30s
 
   backend:
-    image: ${DOCKERHUB_USERNAME:-timeleverage}/yj-backend:${IMAGE_TAG:-1.0}
+    image: ${DOCKERHUB_USERNAME:-burnern}/yj-backend-aws:${IMAGE_TAG:-1.0}
     container_name: yj-backend
     environment:
       - SPRING_PROFILES_ACTIVE=docker
@@ -29,7 +29,7 @@ services:
         condition: service_healthy
 
   frontend:
-    image: ${DOCKERHUB_USERNAME:-timeleverage}/yj-frontend:${IMAGE_TAG:-1.0}
+    image: ${DOCKERHUB_USERNAME:-burnern}/yj-frontend-aws:${IMAGE_TAG:-1.0}
     container_name: yj-frontend
     ports:
       - "63342:80"

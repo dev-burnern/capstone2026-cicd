@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/members")
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:63342"})
+@CrossOrigin(origins = {"http://13.125.189.188:63342", "http://localhost:3000", "http://localhost:63342"})
 public class MemberController {
 
     private final MemberRepository memberRepository;

@@ -2,9 +2,11 @@ import './App.css';
 import { useMemo, useState } from 'react';
 import axios from 'axios';
 
+const AWS_HOST = '13.125.189.188';
+
 function App() {
   const apiBaseUrl = useMemo(
-    () => process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api/members',
+    () => process.env.REACT_APP_API_BASE_URL || `http://${AWS_HOST}:8080/api/members`,
     []
   );
   const [registerForm, setRegisterForm] = useState({
